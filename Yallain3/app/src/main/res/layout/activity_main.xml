@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/lavender"
+        android:textSize="28dp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerSports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="monospace"
+        android:entries="@array/sports_array" />
+
+
+    <Spinner
+        android:id="@+id/spinnerStadiums"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerSports"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/stadiums_array" />
+
+
+    <Button
+        android:id="@+id/btnRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerStadiums"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="monospace"
+        android:text="Rent" />
+    <Button
+        android:id="@+id/btnViewHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:fontFamily="monospace"
+        android:text="View Rent History" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:background="@null"
+            android:contentDescription="Home" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/profile"
+            android:background="@null"
+            android:contentDescription="Profile" />
+    </LinearLayout>
+</RelativeLayout>

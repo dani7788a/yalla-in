@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login"
+
+    tools:context=".SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/yallaInText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:padding="8dp"
+            android:fontFamily="monospace"
+            android:drawableLeft="@drawable/sports"
+            android:text="Yalla in"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"
+            android:textSize="34sp" />
+        <TextView
+            android:id="@+id/yallaInSignupText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="Signup"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp"
+            android:padding="20dp">
+            <!-- Full Name -->
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/signup_full_name"
+                android:fontFamily="monospace"
+                android:padding="8dp"
+                android:hint="Full Name"
+
+                android:drawablePadding="8dp"/>
+
+            <!-- Gender -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/maleRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:fontFamily="monospace"
+                        android:padding="8dp"/>
+
+                    <RadioButton
+                        android:id="@+id/femaleRadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:fontFamily="monospace"
+                        android:padding="8dp"/>
+
+                    <!-- Add more RadioButtons for other gender options if needed -->
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Date of Birth -->
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/signup_dob"
+                android:fontFamily="monospace"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Date of Birth (dd-mm-yyyy)"
+                android:inputType="date"
+                android:drawableLeft="@drawable/calendar"
+                android:drawablePadding="8dp"/>
+
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/signup_email"
+                android:fontFamily="monospace"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:hint="Username"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/signup_password"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:fontFamily="monospace"
+                android:padding="8dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/lock"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/signup_confirm"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/pass"
+                android:drawablePadding="8dp"/>
+
+            <Button
+                android:layout_width="350dp"
+                android:layout_height="70dp"
+                android:text="Sign Up"
+                android:fontFamily="monospace"
+                android:id="@+id/signup_button"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                app:cornerRadius = "30dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginRedirectText"
+                android:text="Already an user? Login"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/lavender"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
