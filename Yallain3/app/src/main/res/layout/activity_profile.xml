@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login">
+ <ImageView
+    android:id="@+id/profilePicture"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_centerHorizontal="true"
+    android:scaleType="centerCrop"
+
+    android:layout_marginTop="50dp"/>
+
+<TextView
+android:id="@+id/usernameTextView"
+android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Username"
+    android:textColor="@color/lavender"
+    android:fontFamily="monospace"
+    android:layout_centerHorizontal="true"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:layout_marginTop="220dp"/>
+
+
+
+<Button
+    android:id="@+id/logoutButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Logout"
+    android:fontFamily="monospace"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="300dp"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:gravity="bottom"
+    android:layout_alignParentBottom="true"
+    android:padding="16dp">
+
+<ImageButton
+android:id="@+id/homeButton"
+android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@drawable/home"
+    android:background="@null"
+    android:contentDescription="Home" />
+
+<ImageButton
+android:id="@+id/settingsButton"
+android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@drawable/profile"
+    android:background="@null"
+    android:contentDescription="Settings" />
+</LinearLayout>
+</RelativeLayout>

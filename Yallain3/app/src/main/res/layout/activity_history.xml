@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login">
+
+
+    <ListView
+        android:id="@+id/listViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="monospace"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:background="@null"
+            android:contentDescription="Home" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/profile"
+            android:background="@null"
+            android:contentDescription="Profile" />
+    </LinearLayout>
+</RelativeLayout>
