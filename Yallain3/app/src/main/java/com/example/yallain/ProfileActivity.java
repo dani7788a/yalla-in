@@ -1,5 +1,3 @@
-package com.example.yallain;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,12 +11,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
-    private static final String PREF_NAME = "MyPrefs"; // Define PREF_NAME constant
+
+    private static final String PREF_NAME = "MyPrefs";
     private static final String KEY_USER = "USER";
+
     private ImageView profilePicture;
     private TextView usernameTextView;
-
-    private ImageView homeButton; // Add ImageButton for home navigation
+    private TextView userBioTextView;
+    private Button editProfileButton;
+    private ImageView homeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,55 +28,71 @@ public class ProfileActivity extends AppCompatActivity {
 
         profilePicture = findViewById(R.id.profilePicture);
         usernameTextView = findViewById(R.id.usernameTextView);
+        userBioTextView = findViewById(R.id.userBioTextView);
+        editProfileButton = findViewById(R.id.editProfileButton);
+        homeButton = findViewById(R.id.homeButton);
 
-        homeButton = findViewById(R.id.homeButton); // Initialize home button
-
-        // Set the user's profile picture, username, and email address
         String loggedInEmail = getLoggedInUserEmail();
-
-        // Display the logged-in email in a TextView
         usernameTextView.setText(loggedInEmail);
         Log.d("ProfileActivity", "Retrieved email from SharedPreferences: " + loggedInEmail);
-        // Display the email in a TextView
 
         Button logoutButton = findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Clear user session data
                 clearUserSession();
-
-                // Navigate back to the login screen or any other appropriate screen
                 Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish(); // Finish the current activity
+                finish();
             }
         });
 
-        // Retrieve the username associated with the logged-in user from the database
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
-
-        // Set the username to the TextView
         if (loggedInEmail != null) {
             usernameTextView.setText(loggedInEmail);
         } else {
-            // Handle case where username is null (not found in the database)
             usernameTextView.setText("Unknown");
         }
 
-        // Set onClickListener for home button
         homeButton.setOnClickListener(v -> {
-            // Navigate back to MainActivity
             Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
             startActivity(intent);
-            finish(); // Finish the current activity
+            finish();
         });
+
+        // Set onClickListener for the profile picture
+        profilePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Implement logic to allow users to change their profile picture
+                // This could involve opening a dialog or another activity for selecting/uploading an image
+                // Example:
+                // Intent intent = new Intent(ProfileActivity.this, ChangeProfilePictureActivity.class);
+                // startActivity(intent);
+            }
+        });
+
+        // Set onClickListener for the edit profile button
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Implement logic to allow users to edit their profile information
+                // This could involve opening an activity or fragment for editing profile details
+                // Example:
+                // Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                // startActivity(intent);
+            }
+        });
+
+        // Retrieve and display user bio
+        String userBio = getUserBio();
+        userBioTextView.setText(userBio);
     }
+
     public String getLoggedInUserEmail() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        return sharedPreferences.getString(KEY_USER, ""); // Assuming you stored the email with the key "user"
+        return sharedPreferences.getString(KEY_USER, "");
     }
+
     private void clearUserSession() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -83,5 +100,11 @@ public class ProfileActivity extends AppCompatActivity {
         editor.apply();
     }
 
-
+    private String getUserBio() {
+        // Implement logic to retrieve user bio from the database or SharedPreferences
+        // Example:
+        // SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        // return sharedPreferences.getString(KEY_BIO, "");
+        return "User Bio Placeholder"; // Placeholder text
+    }
 }
