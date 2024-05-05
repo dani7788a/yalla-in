@@ -31,19 +31,19 @@ public class HistoryActivity extends AppCompatActivity {
 
         homeButton = findViewById(R.id.homeButton);
         homeButton.setOnClickListener(v -> {
-            // Navigate back to MainActivity
+
             Intent intent = new Intent(HistoryActivity.this, MainActivity.class);
             startActivity(intent);
-            finish(); // Finish the current activity
+            finish();
         });
         profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String loggedInEmail = getLoggedInUser(); // Retrieve the logged-in email
+                String loggedInEmail = getLoggedInUser();
                 Log.d("MainActivity", "Logged-in email: " + loggedInEmail);
                 Intent intent = new Intent(HistoryActivity.this, ProfileActivity.class);
-                intent.putExtra("USER", loggedInEmail); // Pass the logged-in email to ProfileActivity
+                intent.putExtra("USER", loggedInEmail);
                 startActivity(intent);
             }
         });
@@ -53,11 +53,13 @@ public class HistoryActivity extends AppCompatActivity {
 
         try {
 
-            ArrayList<String> rentalHistory = databaseHelper.getRentalHistory();
+            String loggedInEmail = getLoggedInUser();
 
 
-            historyAdapter = new ArrayAdapter<>(this,R.layout.custom_item, rentalHistory);
+            ArrayList<String> rentalHistory = databaseHelper.getRentalHistory(loggedInEmail);
 
+
+            historyAdapter = new ArrayAdapter<>(this, R.layout.custom_item, rentalHistory);
             listViewHistory.setAdapter(historyAdapter);
         } catch (Exception e) {
             e.printStackTrace();
